@@ -4,8 +4,13 @@ const app = express()
 
 const port = 5500
 
-// import user routes middleware file
 
+// importing database config
+const dbConnection = require('./db/dbConfig')
+
+
+
+// import user routes middleware file
 const userRoute = require('./Routes/userRoute')
 
 
@@ -15,18 +20,29 @@ app.use("/api/users", userRoute)
 
 
 
+async function start(){
+
+    try {
+        const result = await dbConnection.execute("select 'test' ")
+        app.listen(port)
+        console.log("database connection stablished")
+
+                console.log(`server runining on port ${port}`)
 
 
-
-
-
-
-app.listen(port, (err)=>{
-    if(err){
-        console.log(err)
-
+    } catch (error) {
+        console.log(error)
+        
     }
-    else{
-        console.log(`server runining on port ${port}`)
-    }
-})
+
+}
+
+start()
+
+
+
+
+
+
+
+    
