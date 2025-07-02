@@ -1,20 +1,41 @@
-const mysql2 = require('mysql2')
+const express = require('express')
 
-const dbConnection = mysql2.createPool({
-    user:"qandq-admin",
-    database:"QandA-db",
-    host:"localhost",
-    password:'123456',
-    connectionLimit:10
+const app = express()
+
+const port = 5500
+
+
+// register new user
+app.get("/api/users/register", (req,res)=>{
+    res.send("welcome register")
 })
 
-dbConnection.execute("select 'test' ", (err,result)=>{
+// login user
+app.get("/api/users/login", (req,res)=>{
+    res.send("welcome login")
+})
 
+// check user
+
+app.get("/api/users/check", (req,res)=>{
+    res.send("welcome check")
+})
+
+
+
+
+
+
+
+
+
+
+app.listen(port, (err)=>{
     if(err){
-        console.log(err.message)
-    } else{
-        console.log(result)
+        console.log(err)
+
     }
-
-
+    else{
+        console.log(`server runining on port ${port}`)
+    }
 })
