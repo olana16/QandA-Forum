@@ -4,23 +4,14 @@ const app = express()
 
 const port = 5500
 
+// import user routes middleware file
 
-// register new user
-app.get("/api/users/register", (req,res)=>{
-    res.send("welcome register")
-})
+const userRoute = require('./Routes/userRoute')
 
-// login user
-app.get("/api/users/login", (req,res)=>{
-    res.send("welcome login")
-})
 
-// check user
+// userROute middleware
 
-app.get("/api/users/check", (req,res)=>{
-    res.send("welcome check")
-})
-
+app.use("/api/users", userRoute)
 
 
 
