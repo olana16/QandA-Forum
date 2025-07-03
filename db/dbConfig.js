@@ -1,13 +1,13 @@
 const mysql2 = require('mysql2')
-
+require('dotenv').config()
 const dbConnection = mysql2.createPool({
-    user:"qanda-admin",
-    database:"QandA-db",
+    user:process.env.DB_USER,
+    database:process.env.DATABASE,
     host:"localhost",
-    password:'123456',
+    password:process.env.PASSWORD,
     connectionLimit:10
 })
-
+console.log(process.env.DATABASE)
 //dbConnection.execute("select 'test' ", (err,result)=>{
 
     // if(err){
