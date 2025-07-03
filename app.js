@@ -27,6 +27,12 @@ app.use(express.json())
 app.use("/api/users", userRoute)
 
 
+// Question Routes middleware file
+const questionsRoutes = require("./Routes/questionRoutes");
+app.use("/api", questionsRoutes);
+
+
+
 
 async function start() {
 
