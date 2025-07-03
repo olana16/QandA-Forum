@@ -34,8 +34,8 @@ async function postQuestion(req, res) {
 
     // Insert question into database
     await dbConnection.query(
-      "INSERT INTO questions ( userid, questionid, title, description, tag, created_at) VALUES (?,?,?,?,?,?)",
-      [userid, questionid, title, description, tag, new Date()]
+      "INSERT INTO questions ( userid, questionid, title, description, tag) VALUES (?,?,?,?,?)",
+      [userid, questionid, title, description, tag]
     );
 
     return res.status(201).json({
@@ -49,11 +49,15 @@ async function postQuestion(req, res) {
   }
 }
 
+
+
+
+
 async function getAllQuestion(req, res) {
   try {
     // GEt all questions from the database
     const [questions] = await dbConnection.execute(
-      "SELECT q.*,u.username FROM questions q JOIN users u ON q.userid = u.userid ORDER BY created_at DESC"
+      "SELECT q.*,u.username FROM questions q JOIN users u ON q.userid = u.userid "
     );
     //check if the questions array is empty
     if (questions.length === 0) {
@@ -61,6 +65,7 @@ async function getAllQuestion(req, res) {
     }
 
     return res.status(StatusCodes.OK).json(questions);
+
   } catch (error) {
     console.error(error);
     return res
@@ -68,6 +73,8 @@ async function getAllQuestion(req, res) {
       .json({ message: "An unexpected error occurred", error: error });
   }
 }
+
+
 
 // Controller to get a single question by ID
 async function getSingleQuestion(req, res) {
@@ -104,4 +111,5 @@ async function getSingleQuestion(req, res) {
   }
 }
 
-module.exports = { postQuestion, getAllQuestion, getSingleQuestion };
+
+module.exports = {postQuestion,getAllQuestion,getSingleQuestion}

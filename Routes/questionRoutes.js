@@ -1,12 +1,7 @@
 const express = require("express");
 const router = express.Router();
-
-const {
-  postQuestion,
-  getAllQuestion,
-  getSingleQuestion,
-} = require("../controllers/questionController");
-const authMiddleware = require("../middleware/authMiddleware");
+const {postQuestion,getAllQuestion,getSingleQuestion} = require('../controllers/questionController')
+const authMiddleware = require("../middlewaree/authMiddleware");
 
 // API endpoints
 router.post("/question", authMiddleware, postQuestion);
