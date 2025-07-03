@@ -33,6 +33,11 @@ app.use("/api", questionsRoutes);
 
 
 
+// Use answer routes
+const answerRoutes = require('./Routes/answerRoutes')
+app.use("/api", answerRoutes);
+
+
 
 async function start() {
 
