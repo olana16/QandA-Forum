@@ -84,6 +84,40 @@ async function login(req, res) {
 
 
 
+<<<<<<< HEAD
+=======
+    const{username,password} = req.body
+    if(!username || !password){
+        return res.status(400).json({msg: "please provide required credentials"})
+    }
+
+
+    try {
+
+        const [user] = await dbConnection.query("select username,password from users where email=?",[email])
+        if(user.length==0){
+            return res.status(400).json({msg:"invalid credentials"})
+        }
+
+        const isMatch = await bcrypt.compare(password, user[0].password)
+        if(!isMatch){
+            return res.status(400).json({msg:"invalid credentials"})
+        }
+            return res.status(200).json({user: user[0].password})
+        
+
+        
+        
+    } catch (error) {
+            res.status(500).json({msg: "Something went wrong, please try again"})
+
+    }
+
+
+const[user]= await dbConnection.query("")
+
+
+>>>>>>> 54fdf4e81e6e6f7941054e5166fde167215805e3
 }
 
 
