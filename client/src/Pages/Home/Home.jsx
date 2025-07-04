@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import axios from "../../config/axios";
 import { AuthContext } from "../../App";
 import { useContext } from "react";
-import QuestionCard from "../../Components/QuestionCard";
+import QuestionCard from "../../Component/QuestionCard";
 
 //main home page
 function Home() {

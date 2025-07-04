@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Footer from '../../components/footer/Footer'
-import Header from '../../Components/Header/Header'
+import Footer from '../../Component/footer/Footer'
+import Header from '../../Component/Header/Header'
 
 
 function LayOut({children}) {

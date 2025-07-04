@@ -2,13 +2,13 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 // import Login from './Pages/Login/Login'
-import QuestionPage from "./Components/questionPage/QuestionPage";
+import QuestionPage from "./Component/questionPage/QuestionPage";
 // import SignUp from "./Components/SignUp/SignUp";
 // import About from "./Components/About/About";
 // import QuestionDisplay from "./Components/QuestionDisplay";
 import Auth from "./Pages/Auth/Auth";
-import AnswerPage from "./Pages/AnswerPage";
-import AnswerForm from "./Components/AnswerForm";
+//import AnswerPage from "./Pages/AnswerPage";
+//import AnswerForm from "./Component/AnswerForm";
 import Answer from "./Pages/Answer/Answer";
 
 function Routing() {
