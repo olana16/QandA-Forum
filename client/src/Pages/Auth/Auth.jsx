@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import LayOut from "../Layout/LayOut";
 import SignUp from "../../Component/SignUp/SignUp";
 import About from "../../Component/About/About";
-import SignIn from "../../Components/Login/Login";
+import SignIn from "../../Component/Login/Login";
 import "./Auth.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";

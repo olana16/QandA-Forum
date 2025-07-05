@@ -1,6 +1,6 @@
 // import React from "react";
 import "./Header.css";
-import logo from "../../assets/evangadi-logo-home.png";
+import logo from "../../assets/images/logos/evangadi_main_logo_black.png";
 import { useState, useContext } from "react";
 import { Squash as Hamburger } from "hamburger-react";
 import { useNavigate, Link } from "react-router-dom";
